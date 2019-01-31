@@ -81,8 +81,7 @@ public class SnakeGame {
 
     public static void snakeHustle() {
         if (headX == widthWall || headY == heightWall) {
-            foodX = rand.nextInt((9) + 1) % widthWall;
-            foodY = rand.nextInt((9) + 1) % heightWall;
+            gameOver = true;
         }
     }
 }
