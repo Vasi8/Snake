@@ -39,4 +39,32 @@ public class SnakeGame {
         }
 
     }
+
+    public static void moveUp() {
+        boolean up = true;
+        if (up) {
+            headY++;
+        }
+    }
+
+    public static void moveDown() {
+        boolean down = true;
+        if (down) {
+            headY--;
+        }
+    }
+
+    public static void moveRight() {
+        boolean right = true;
+        if (right) {
+            headX++;
+        }
+    }
+
+    public static void moveLeft() {
+        boolean left = true;
+        if (left) {
+            headX--;
+        }
+    }
 }
