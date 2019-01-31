@@ -17,10 +17,54 @@ public class SnakeGame {
     public static int foodY = rand.nextInt((9) + 1) % heightWall;
 
 
-    public static boolean gameOver;
-    private static KeyEvent key;
-
     public static void main(String[] args) throws IOException, InterruptedException {
+        drawWall();
     }
 
+
+    public static void drawWall() {
+        for (int i = 0; i < widthWall; i++) { //редове
+            for (int j = 0; j < heightWall; j++) { //колони
+                if (i == 0 || i == widthWall - 1 || j == 0 || j == heightWall - 1) { //стени
+                    System.out.print("€");
+                } else if (i == headX && j == headY) {  //главата на змията
+                    System.out.print("f");
+                } else if (i == foodX && j == foodY) {  //ябълка
+                    System.out.print("♥");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void moveUp() {
+        boolean up = true;
+        if (up) {
+            headY++;
+        }
+    }
+
+    public static void moveDown() {
+        boolean down = true;
+        if (down) {
+            headY--;
+        }
+    }
+
+    public static void moveRight() {
+        boolean right = true;
+        if (right) {
+            headX++;
+        }
+    }
+
+    public static void moveLeft() {
+        boolean left = true;
+        if (left) {
+            headX--;
+        }
+    }
 }
