@@ -22,6 +22,8 @@ public class SnakeGame {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         drawWall();
+        eatFood();
+        snakeHustle();
     }
 
     public static void drawWall() {
