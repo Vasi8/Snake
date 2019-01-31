@@ -17,11 +17,12 @@ public class SnakeGame {
     public static int foodY = rand.nextInt((9) + 1) % heightWall;
 
 
+    public static boolean gameOver;
+    private static KeyEvent key;
+
     public static void main(String[] args) throws IOException, InterruptedException {
         drawWall();
-        eatFood();
     }
-
 
     public static void drawWall() {
         for (int i = 0; i < widthWall; i++) { //редове
@@ -69,10 +70,18 @@ public class SnakeGame {
         }
     }
 
-    public static void eatFood(){
-        if(headX == foodX && headY == foodY){
+    public static void eatFood() {
+        if (headX == foodX && headY == foodY) {
+            foodX = rand.nextInt((9) + 1) % widthWall;
+            foodY = rand.nextInt((9) + 1) % heightWall;
+        }
+    }
+
+    public static void snakeHustle() {
+        if (headX == widthWall || headY == heightWall) {
             foodX = rand.nextInt((9) + 1) % widthWall;
             foodY = rand.nextInt((9) + 1) % heightWall;
         }
     }
 }
+
