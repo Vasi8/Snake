@@ -19,6 +19,7 @@ public class SnakeGame {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         drawWall();
+        eatFood();
     }
 
 
@@ -65,6 +66,13 @@ public class SnakeGame {
         boolean left = true;
         if (left) {
             headX--;
+        }
+    }
+
+    public static void eatFood(){
+        if(headX == foodX && headY == foodY){
+            foodX = rand.nextInt((9) + 1) % widthWall;
+            foodY = rand.nextInt((9) + 1) % heightWall;
         }
     }
 }
